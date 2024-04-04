@@ -12,7 +12,7 @@ body {
     background: rgb(39,48,54);
     background: -moz-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
     background: -webkit-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
-    overflow: hidden; /* Empêche tout défilement sur la page */
+    overflow: hidden;
     height: 100vh;
 }
 
@@ -63,7 +63,7 @@ h1 {
 
 #sentence-box span {
     display: inline-block;
-    color: #666; /* Couleur par défaut */
+    color: #666;
 }
 
 .correct {
