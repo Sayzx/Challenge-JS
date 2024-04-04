@@ -145,3 +145,12 @@ html {
 .carousel__item[data-pos="2"] {
     transform: translateX(100%) scale(.8); /* Espacement significativement augmenté, ajusté symétriquement */
 }
+
+
+.carousel__item[data-pos="3"] {
+    opacity: 0.2;
+    filter: blur(5px) grayscale(30%);
+    transform: translateX(-140%) scale(.7); /* Espacement significativement augmenté */
+    z-index: 2;
+}
+
