@@ -12,7 +12,11 @@ body {
     background: rgb(39,48,54);
     background: -moz-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
     background: -webkit-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
+<<<<<<<< HEAD:web/assets/css/typing.css
     overflow: hidden;
+========
+    overflow: hidden; 
+>>>>>>>> sayzx:web/assets/css/keyboard-tester.css
     height: 100vh;
 }
 
@@ -51,42 +55,66 @@ body {
     margin: 0 auto;
 }
 
-h1 {
-    color: #333;
-}
+
 
 #sentence-box {
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
+    border-radius: 10px;
     padding: 10px;
     margin: 20px 0;
+    font-size: 18px;
+    font-family: 'Satoshi-Bold', sans-serif;
+    color : #fff;
+    text-align: center;
 }
 
+<<<<<<<< HEAD:web/assets/css/typing.css
 #sentence-box span {
     display: inline-block;
     color: #666;
 }
+========
+>>>>>>>> sayzx:web/assets/css/keyboard-tester.css
 
-.correct {
-    color: green;
-}
 
-.incorrect {
-    color: red;
-}
-
-input[type="text"] {
-    margin-top: 10px;
-    padding: 5px;
-    width: 100%;
+#user-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 94%;
+    text-align: center;
 }
 
 #error-count, #timer {
     font-size: 16px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #result {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
-    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#timer {
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 1.5em;
+    color: #e3d9e7;
+    text-align: center;
+
 }

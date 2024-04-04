@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Typing</title>
+    <title>HighScore | Typing</title>
     <link rel="stylesheet" href="../assets/css/typing.css">
     <script src="../games/typing.js"></script>
     <script src="https://kit.fontawesome.com/459ca3d53b.js" crossorigin="anonymous"></script>
@@ -20,12 +20,11 @@
         </div>
     </div>
     <div id="sentence-box"></div>
-        <input type="text" id="user-input" placeholder="Tapez ici...">
-        <p id="error-count">Erreurs: 0</p>
-        <p id="timer">Temps restant: 1:00</p>
-        <button onclick="startTest()">Commencer le test</button>
-        <p id="result"></p>
+        <input type="text" id="user-input" placeholder="Tapez ici..." autocomplete="off">
+        <button onclick="startTest()"><i class="fa-solid fa-play"></i></button>
+        <p id="timer">Temps restant: <span id="time">60</span></p>
     </div>
+    <p id="result"></p>
   
 </body>
 
