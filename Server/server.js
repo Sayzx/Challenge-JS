@@ -36,7 +36,6 @@ const server = http.createServer((req, res) => {
     }
 
     const filePath = path.join(basePath, reqPath);
-    console.log(filePath);
 
     const ext = path.extname(filePath);
     const mimeTypes = {
