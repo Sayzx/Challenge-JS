@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/459ca3d53b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/testclavier.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/keyboard-tester.css">
+    <title>HightScore | Keyboard Tester</title>
 </head>
 <body>
     <div class="navbar">
@@ -17,13 +17,12 @@
         </div>
     </div>
     <div id="sentence-box"></div>
-        <input type="text" id="user-input" placeholder="Tapez ici...">
-        <p id="error-count">Erreurs: 0</p>
-        <p id="timer">Temps restant: 1:00</p>
-        <button onclick="startTest()">Commencer le test</button>
-        <p id="result"></p>
+        <input type="text" id="user-input" placeholder="Tapez ici..." autocomplete="off">
+        <button onclick="startTest()"><i class="fa-solid fa-play"></i></button>
+        <p id="timer">Temps restant: <span id="time">60</span></p>
     </div>
+    <p id="result"></p>
   
 </body>
-    <script src="../games/testclavier.js"></script>
+    <script src="../games/keyboard-tester.js"></script>
 </html>
