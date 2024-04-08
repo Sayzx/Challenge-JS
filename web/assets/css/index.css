@@ -12,7 +12,7 @@ body {
     background: rgb(39,48,54);
     background: -moz-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
     background: -webkit-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
-    overflow: hidden; /* Empêche tout défilement sur la page */
+    overflow: hidden;
     height: 100vh;
 }
 
@@ -64,10 +64,9 @@ html {
     width: 100%;
     height: 100%;
     align-items: center;
-    font-family: Arial;
-    margin-top: -50px; /* Ajustez cette valeur selon le besoin pour rapprocher du navbar */
+    font-family: Arial, sans-serif;
+    margin-top: -50px;
 }
-
 
 .carousel__list {
     display: flex;
@@ -83,19 +82,19 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px; /* Largeur de la carte */
-    height: 450px; /* Hauteur de la carte */
+    width: 300px;
+    height: 450px;
     border-radius: 20px;
-    box-shadow: 0px 4px 16px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0 4px 16px 0 rgba(50, 50, 50, 0.5);
     position: absolute;
     transition: all .3s ease-in;
-    overflow: hidden; /* Assurez-vous que les images ne dépassent pas de la carte */
+    overflow: hidden;
 }
 
 .carousel__item img {
-    width: 100%; /* Fait que l'image remplisse la largeur de la carte */
-    height: 100%; /* Fait que l'image remplisse la hauteur de la carte */
-    object-fit: cover; /* Assure que l'image couvre la carte, sans déformer l'image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .carousel__item:nth-child(1) {
@@ -126,31 +125,29 @@ html {
 .carousel__item[data-pos="1"] {
     opacity: 0.7;
     filter: blur(1px) grayscale(10%);
-    transform: translateX(-60%) scale(.9); /* Espacement augmenté */
+    transform: translateX(-60%) scale(.9);
     z-index: 4;
 }
 
 .carousel__item[data-pos="1"] {
-    transform: translateX(60%) scale(.9); /* Espacement augmenté, ajusté symétriquement */
+    transform: translateX(60%) scale(.9);
 }
 
 .carousel__item[data-pos="-2"],
 .carousel__item[data-pos="2"] {
     opacity: 0.4;
     filter: blur(3px) grayscale(20%);
-    transform: translateX(-100%) scale(.8); /* Espacement significativement augmenté */
+    transform: translateX(-100%) scale(.8);
     z-index: 3;
 }
 
 .carousel__item[data-pos="2"] {
-    transform: translateX(100%) scale(.8); /* Espacement significativement augmenté, ajusté symétriquement */
+    transform: translateX(100%) scale(.8);
 }
-
 
 .carousel__item[data-pos="3"] {
     opacity: 0.2;
     filter: blur(5px) grayscale(30%);
-    transform: translateX(-140%) scale(.7); /* Espacement significativement augmenté */
+    transform: translateX(-140%) scale(.7);
     z-index: 2;
 }
-

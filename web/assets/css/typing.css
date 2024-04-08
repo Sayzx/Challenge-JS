@@ -12,8 +12,8 @@ body {
     background: rgb(39,48,54);
     background: -moz-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
     background: -webkit-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
-    overflow: hidden; 
     height: 100vh;
+    overflow: hidden;
 }
 
 .navbar {
@@ -51,29 +51,28 @@ body {
     margin: 0 auto;
 }
 
-
-
 #sentence-box {
     border: 3px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     margin: 20px 0;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Satoshi-Bold', sans-serif;
     color : #fff;
     text-align: center;
+    line-height: 1.8;
 }
 
-
-
 #user-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 18px;
+    border: 0.9px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     width: 94%;
     text-align: center;
+    font-family: 'Satoshi-Bold', sans-serif;
+    
 }
 
 #error-count, #timer {
@@ -87,7 +86,8 @@ body {
 }
 
 button {
-    padding: 10px 20px;
+    align-items: center;
+    padding: 12px 20px;
     font-size: 16px;
     background-color: #007bff;
     color: #fff;
@@ -107,3 +107,4 @@ button:hover {
     text-align: center;
 
 }
+

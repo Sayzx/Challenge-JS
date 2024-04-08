@@ -25,13 +25,16 @@ function serveStaticFile(res, filePath, contentType) {
 const server = http.createServer((req, res) => {
 
     let basePath;
+    let reqPath
+
     if (req.url.startsWith('/assets/')) {
-        basePath = path.join(__dirname, '../assets');
+        basePath = path.join(__dirname, '../web/assets');
+        reqPath = req.url.substring('/assets'.length);
     } else {
-        basePath = path.join(__dirname, '../template');
+        basePath = path.join(__dirname, '../web/templates');
+        reqPath = req.url === '/' ? '/index.html' : req.url;
     }
 
-    const reqPath = req.url === '/' ? '/index.html' : req.url;
     const filePath = path.join(basePath, reqPath);
 
     const ext = path.extname(filePath);
