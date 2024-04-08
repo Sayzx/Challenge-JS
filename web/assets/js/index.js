@@ -1,76 +1,66 @@
-const state = {};
-const carouselList = document.querySelector('.carousel__list');
-const carouselItems = document.querySelectorAll('.carousel__item');
-const elems = Array.from(carouselItems);
+addEventListener('DOMContentLoaded', function () {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const elems = Array.from(carouselItems);
 
-carouselList.addEventListener('click', function(event) {
-  var newActive = event.target.closest('.carousel__item'); 
+    activateRedirection(elems)
 
-  if (!newActive || newActive.classList.contains('carousel__item_active')) {
-    return;
-  }
-  
-  update(newActive);
-});
-const update = function(newActive) {
-    const newActivePos = parseInt(newActive.dataset.pos, 10);
-  
-    // Mise à jour de la logique pour inclure -3 et 3 dans les calculs
-    const positions = [-3, -2, -1, 0, 1, 2, 3]; // Assurez-vous que cette gamme correspond à votre ensemble d'éléments
-    const current = elems.find((elem) => elem.dataset.pos == "0");
-    const currentPosIndex = positions.indexOf(parseInt(current.dataset.pos, 10));
-  
-    if (current) current.classList.remove('carousel__item_active');
-    newActive.classList.add('carousel__item_active'); 
-  
-    elems.forEach(item => {
-      let itemPos = parseInt(item.dataset.pos, 10);
-      let newPosIndex = (positions.length + positions.indexOf(itemPos) - (positions.indexOf(newActivePos) - currentPosIndex)) % positions.length;
-      item.dataset.pos = positions[newPosIndex].toString();
+    addEventListener('keydown', function (event) {
+
+        if (event.key === 'ArrowRight') {
+            update(elems, 'l');
+        }else if (event.key === 'ArrowLeft') {
+            update(elems, 'r');
+        }
     });
-  };
 
-const getPos = function(current, active) {
-  const diff = current - active;
-  const absDiff = Math.abs(diff);
+    document.addEventListener('click', function(event) {
+        const clickX = event.clientX;
 
-  if (absDiff > 2) {
-    return -current;
-  }
+        const screenWidthHalf = window.innerWidth / 2;
 
-  return Number(current) - Number(active);
+        if(clickX < screenWidthHalf) {
+            update(elems, 'r')
+        } else {
+            update(elems, 'l')
+        }
+    });
+});
+
+function update(elems, move){
+        elems.forEach(item => {
+            let position = parseInt(item.dataset.pos);
+            if (move === 'r'){
+                if (position === 5){
+                    position = 0;
+                    item.dataset.pos = position.toString();
+                }else{
+                    position = position + 1;
+                    item.dataset.pos = position.toString();
+                }
+            }else{
+                if (position === 0){
+                    position = 5;
+                    item.dataset.pos = position.toString();
+                }else{
+                    position = position - 1;
+                    item.dataset.pos = position.toString();
+                }
+            }
+        });
+        activateRedirection(elems);
 }
 
+function activateRedirection(elems) {
+    elems.forEach(item => {
+        const link = item.querySelector('a');
+        link.classList.remove('active', 'inactive');
+        link.classList.add('inactive');
+    });
 
-let lastKeypressTime = 0; 
-
-document.addEventListener('keydown', function(event) {
-  const currentActive = document.querySelector('.carousel__item_active');
-  if (!currentActive) return;
-
-  const currentTime = new Date().getTime();
-  if (currentTime - lastKeypressTime < 300) { 
-    return;
-  }
-  lastKeypressTime = currentTime;
-
-  let newActive;
-  if (event.key === 'ArrowRight') {
-    // Déplacer vers la droite
-    newActive = getNextActive(currentActive, 1);
-  } else if (event.key === 'ArrowLeft') {
-    // Déplacer vers la gauche
-    newActive = getNextActive(currentActive, -1);
-  }
-
-  if (newActive) {
-    update(newActive);
-  }
-});
-
-function getNextActive(currentActive, direction) {
-  const currentPos = Number(currentActive.dataset.pos);
-  const newPos = (currentPos + direction + 5) % 5; 
-  const newActive = elems.find((elem) => Number(elem.dataset.pos) === newPos - 2); 
-  return newActive;
+    const activeItem = Array.from(elems).find(item => item.getAttribute('data-pos') === "2");
+    if (activeItem) {
+        const link = activeItem.querySelector('a');
+        link.classList.remove('inactive');
+        link.classList.add('active');
+    }
 }
