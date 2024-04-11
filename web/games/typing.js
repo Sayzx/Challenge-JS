@@ -11,6 +11,20 @@ function startTest() {
     document.getElementById("sentence-box").textContent = ""; 
     showNextWord();
     timerInterval = setInterval(updateTimer, 1000);
+
+    // Ajouter un écouteur pour keydown sur l'élément d'entrée de l'utilisateur
+    document.getElementById("user-input").addEventListener("keydown", function(event) {
+        if (event.key === " " && this.value === " ") {
+            // Empêcher l'espace supplémentaire
+            event.preventDefault();
+            // Simuler une entrée erronée et passer au mot suivant
+            this.value = ""; // Réinitialiser la valeur pour éviter de compter comme double espace
+            errors++;
+            document.getElementById("error-count").textContent = "Erreurs: " + errors;
+            currentWordIndex++;
+            showNextWord();
+        }
+    });
 }
 
 function shuffleWords() {
@@ -74,7 +88,15 @@ function finishTest() {
 function userInputHandler() {
     let userInput = this.value.trim();
     let currentWord = words[currentWordIndex];
-    if (userInput === currentWord) {
+
+    // Vérifier si l'utilisateur a appuyé deux fois sur espace
+    if (userInput === "" && this.value.endsWith("  ")) { // Deux espaces à la fin
+        this.style.color = "red"; // Marquer le mot en rouge
+        errors++;
+        document.getElementById("error-count").textContent = "Erreurs: " + errors;
+        currentWordIndex++;
+        showNextWord();
+    } else if (userInput === currentWord) {
         this.style.color = "green";
         currentWordIndex++;
         showNextWord();
@@ -86,3 +108,4 @@ function userInputHandler() {
         document.getElementById("error-count").textContent = "Erreurs: " + errors;
     }
 }
+
