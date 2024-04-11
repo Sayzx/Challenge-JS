@@ -2,9 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../assets/css/morpion.css">
+    <script src="../games/morpion.js"></script>
     <title>HighScore | Morpion</title>
 </head>
 <body>
-
+    <div class="navbar">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="Website Logo">
+        </div>
+        <div class="right-nav">
+            <h1>Jeu du Morpion</h1>
+        </div>
+    </div>
+    <div id="level-selection">
+        <button onclick="startGame('easy')">Facile</button>
+        <button onclick="startGame('medium')">Moyen</button>
+        <button onclick="startGame('hard')">Difficile</button>
+    </div>
+    <div id="game-board" class="game-board"></div>
 </body>
 </html>
