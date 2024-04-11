@@ -30,7 +30,10 @@ const server = http.createServer((req, res) => {
     if (req.url.startsWith('/assets/')) {
         basePath = path.join(__dirname, '../web/assets');
         reqPath = req.url.substring('/assets'.length);
-    } else {
+    } else if (req.url.startsWith('/games/')) {
+        basePath = path.join(__dirname, '../web/games');
+        reqPath = req.url.substring('/games'.length);
+    }else {
         basePath = path.join(__dirname, '../web/templates');
         reqPath = req.url === '/' ? '/index.html' : req.url;
     }
