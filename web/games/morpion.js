@@ -81,12 +81,11 @@
         notificationText.innerHTML = message;
         notification.style.display = 'block';
         
-        clearTimeout(notificationTimeout); // Point 4: Annuler le délai précédent
+        clearTimeout(notificationTimeout);
         
-        notificationTimeout = setTimeout(() => { // Mettre à jour la variable avec le nouveau délai
+        notificationTimeout = setTimeout(() => {
             notification.style.display = 'none';
-        }, 5000);
-        console.log(notification.style.display);
+        }, 3500);
     }
 
     
@@ -96,7 +95,7 @@
         } else if (checkDraw()) {
             showNotification("Match nul !");
         }
-        document.getElementById('level-selection').style.display = 'block';
+        document.getElementById('level-selection').style.display = 'flex';
         document.getElementById('game-board').style.display = 'none';
         if (currentLevel !== 'easy') {
             currentPlayer = '⭕️';
