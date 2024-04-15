@@ -188,3 +188,12 @@ text-overflow: ellipsis;
 		transform: translateY(0);
 	}
 }
+
+
+.notification-title {
+    font-family: 'Satoshi-Bold', sans-serif;
+}
+
+.notification-text {
+    font-family: 'Satoshi-Bold', sans-serif;
+}

@@ -123,3 +123,17 @@ button:hover {
     transition: background-color 0.5s;
 }
     
+
+.bar {
+    width: 20px; /* Largeur fixe pour chaque barre */
+    margin: 2px;
+    background-color: #FF6347;
+    color: white;
+    text-align: center;
+    vertical-align: bottom; /* Aligner le texte au bas de la barre */
+    display: inline-block; /* Affichage en ligne pour alignement vertical */
+    height: 0; /* Hauteur initiale définie à 0, ajustée dynamiquement */
+    transition: height 0.5s; /* Transition douce pour l'ajustement de la hauteur */
+}
+
+
