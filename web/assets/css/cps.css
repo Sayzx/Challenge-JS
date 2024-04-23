@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('../fonts/Satoshi-Bold.woff') format('woff'),
+    url('../fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: rgb(39, 48, 54);
+    background: -moz-linear-gradient(183deg, rgba(39, 48, 54, 1) 43%, rgba(80, 87, 93, 1) 100%);
+    background: -webkit-linear-gradient(183deg, rgba(39, 48, 54, 1) 43%, rgba(80, 87, 93, 1) 100%);
+    overflow: hidden;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cps{
+    margin-bottom: 2%;
+    color: white;
+    font-size: 20px;
+    background-color: #3e4e59;
+    border-radius: 10%;
+}
+
+.click-box{
+    padding-bottom: 3%;
+    background-color: #403730;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+}
+
+.click-box-array{
+    display: flex;
+    background-color: #403730;
+    margin-top: 3%;
+    border-radius: 5%;
+    height: 90%;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #65443d;
+}
+
+.click-area{
+    height: 95%;
+    width: 95%;
+}
+
+#start{
+    border: none;
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+    border-radius: 5%;
+    background-color: #303240;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+#start:hover{
+    background-color: #3e4e59;
+    cursor: pointer;
+}
+
+#animation{
+
+}
+
+.click-box-btn{
+    display: flex;
+    align-items: center;
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#timer{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#timerCount{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#clicks{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#clicksCount{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#score{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
+
+#scoreCount{
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 150%;
+}
