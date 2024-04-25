@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>HighScore | Memory Test</title>
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="../assets/css/memoryTest.css">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/459ca3d53b.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- script src -->
 
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="Website Logo">
+        </div>
+        <div class="right-nav">
+            <h1>Memory Test</h1>
+        </div>
+    </div>
+    <div class="memory-test">
+        <div class="game-board"></div>
+        <div class="score">Score: <span id="score">0</span></div>
+        <button onclick="startGame()">Commencer</button>
+    </div>
+
+   
 </body>
+<script src="../games/memoryTest.js"></script>
 </html>

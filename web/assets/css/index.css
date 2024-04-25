@@ -16,6 +16,11 @@ body {
     height: 100vh;
 }
 
+body, html {
+    overflow: hidden; /* Prevent scrolling */
+    max-height: 100vh; /* Ensure no vertical overflow */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -155,3 +160,92 @@ body {
     transform: translateX(-140%) scale(.7);
     z-index: 2;
 }
+/* Tablets and smaller devices (up to 768px width) */
+@media (max-width: 768px) {
+    .navbar, .carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 90px; /* Appropriately smaller logo */
+    }
+
+    .button {
+        padding: 5px 15px;
+        font-size: 0.95em; /* Slightly reduced font size */
+    }
+
+    .carousel-item {
+        width: 90%; /* Relative width for better fit */
+        max-width: 260px; /* Maximum width to maintain design */
+        height: 85%; /* Relative height */
+        max-height: 390px; /* Maximum height to maintain aspect ratio */
+    }
+
+    .carousel-item[data-pos="1"], .carousel-item[data-pos="3"] {
+        transform: translateX(-50%) scale(0.8);
+    }
+
+    .carousel-item[data-pos="3"] {
+        transform: translateX(50%) scale(0.8);
+    }
+
+    .carousel-item[data-pos="0"], .carousel-item[data-pos="4"] {
+        transform: translateX(-100%) scale(0.7);
+    }
+
+    .carousel-item[data-pos="4"] {
+        transform: translateX(100%) scale(0.7);
+    }
+}
+
+/* Mobile devices (up to 480px width) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 8px;
+    }
+
+    .logo img {
+        max-width: 70px;
+    }
+
+    .button {
+        padding: 3px 10px;
+        font-size: 0.85em;
+    }
+
+    .carousel-item {
+        width: 85%; /* Even more relative width */
+        max-width: 240px; /* Slightly smaller maximum width */
+        height: 80%; /* More relative height */
+        max-height: 360px; /* Adjusted maximum height */
+    }
+
+    .carousel-item[data-pos="1"], .carousel-item[data-pos="3"] {
+        transform: translateX(-40%) scale(0.7);
+    }
+
+    .carousel-item[data-pos="3"] {
+        transform: translateX(40%) scale(0.7);
+    }
+
+    .carousel-item[data-pos="0"], .carousel-item[data-pos="4"] {
+        transform: translateX(-80%) scale(0.6);
+    }
+
+    .carousel-item[data-pos="4"] {
+        transform: translateX(80%) scale(0.6);
+    }
+}
+
+/* Additional tweaks to enhance responsiveness and aesthetics */
+.carousel-item {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for visual feedback */
+}
+
+.carousel-item img {
+    height: 100%; /* Ensure images cover the whole area */
+    object-fit: cover; /* Cover fit to avoid distortion */
+}
+

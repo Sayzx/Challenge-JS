@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
+         url('../fonts/Satoshi-Bold.woff') format('woff'),
+         url('../fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    background: rgb(39,48,54);
+    background: -moz-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
+    background: -webkit-linear-gradient(183deg, rgba(39,48,54,1) 43%, rgba(80,87,93,1) 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    color: #fff;
+    width: 100%;    
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo img {
+    max-width: 130px;
+    margin-right: 10px;
+}
+
+.right-nav h1 {
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 1.5em;
+    color: #e3d9e7;
+}
+
+.right-nav h1:hover {
+    color: #541ac0;
+    text-decoration: underline;
+    transition: 0.8s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#sentence-box {
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 20px;
+    font-family: 'Satoshi-Bold', sans-serif;
+    color : #fff;
+    text-align: center;
+    line-height: 1.8;
+}
+
+#user-input {
+    padding: 12px;
+    font-size: 18px;
+    border: 0.9px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 94%;
+    text-align: center;
+    font-family: 'Satoshi-Bold', sans-serif;
+    
+}
+
+#error-count, #timer {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#result {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+button {
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#timer {
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 1.5em;
+    color: #e3d9e7;
+    text-align: center;
+
+}
+
+.number-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: 'Satoshi-Bold', sans-serif;
+    transition: background-color 0.5s;
+}
+    
+
+.bar {
+    width: 20px; /* Largeur fixe pour chaque barre */
+    margin: 2px;
+    background-color: #FF6347;
+    color: white;
+    text-align: center;
+    vertical-align: bottom; /* Aligner le texte au bas de la barre */
+    display: inline-block; /* Affichage en ligne pour alignement vertical */
+    height: 0; /* Hauteur initiale définie à 0, ajustée dynamiquement */
+    transition: height 0.5s; /* Transition douce pour l'ajustement de la hauteur */
+}
+
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background-color: #0074D9; /* Bleu */
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.score {
+    margin-top: 20px;
+}

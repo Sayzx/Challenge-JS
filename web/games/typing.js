@@ -84,29 +84,38 @@ function finishTest() {
     document.getElementById("user-input").value = "";
 }
 
-
 function userInputHandler() {
     let userInput = this.value.trim();
     let currentWord = words[currentWordIndex];
 
     // Vérifier si l'utilisateur a appuyé deux fois sur espace
     if (userInput === "" && this.value.endsWith("  ")) { // Deux espaces à la fin
-        this.style.color = "red"; // Marquer le mot en rouge
-        errors++;
+        markWordAsSkipped(currentWordIndex); // Marquer le mot en rouge dans le sentence-box
+        errors++; // Augmenter le compteur d'erreurs
         document.getElementById("error-count").textContent = "Erreurs: " + errors;
-        currentWordIndex++;
-        showNextWord();
+        currentWordIndex++; // Passer au mot suivant
+        showNextWord(); // Afficher le mot suivant
+        this.value = ""; // Réinitialiser l'input
     } else if (userInput === currentWord) {
-        this.style.color = "green";
-        currentWordIndex++;
-        showNextWord();
+        this.style.color = "green"; // Colorer en vert si le mot est correct
+        currentWordIndex++; // Passer au mot suivant
+        showNextWord(); // Afficher le mot suivant
     } else if (currentWord.startsWith(userInput)) {
-        this.style.color = "black";
+        this.style.color = "black"; // Garder en noir si c'est partiellement correct
     } else {
-        this.style.color = "red";
-        errors++;
+        this.style.color = "red"; // Colorer en rouge si incorrect
+        errors++; // Augmenter le compteur d'erreurs
         document.getElementById("error-count").textContent = "Erreurs: " + errors;
     }
 }
+
+function markWordAsSkipped(index) {
+    let sentenceBox = document.getElementById("sentence-box");
+    let wordsSpan = sentenceBox.getElementsByTagName("span");
+    if (wordsSpan[index]) {
+        wordsSpan[index].style.color = "red"; // Colorer le mot à l'index en rouge
+    }
+}
+
 
 
