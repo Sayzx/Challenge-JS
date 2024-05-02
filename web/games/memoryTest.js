@@ -9,15 +9,21 @@ let scoreDisplay = document.getElementById('score');
 function generateSequence() {
     sequence = [];
     for (let i = 0; i < level; i++) {
-        sequence.push(Math.floor(Math.random() * (level + 2))); // Génère un nombre aléatoire de 0 à level + 1
+        sequence.push(Math.floor(Math.random() * 9)); // Génère un nombre aléatoire de 0 à 8
     }
 }
 
 // Affiche la séquence sur le tableau de jeu
 function showSequence() {
-    sequence.forEach((tileIndex) => {
-        highlightTile(tileIndex);
-    });
+    let index = 0;
+    let interval = setInterval(() => {
+        if (index < sequence.length) {
+            highlightTile(sequence[index]);
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 600);
 }
 
 // Met en surbrillance une tuile de la séquence
@@ -48,10 +54,8 @@ function tileClick(index) {
 
 // Vérifie si la séquence du joueur correspond à la séquence générée
 function checkSequence() {
-    let sortedSequence = sequence.slice().sort(); // Copy and sort the sequence
-    let sortedPlayerSequence = playerSequence.slice().sort(); // Copy and sort the player sequence
-    for (let i = 0; i < playerSequence.length; i++) {
-        if (sortedPlayerSequence[i] !== sortedSequence[i]) {
+    for (let i = 0; i < sequence.length; i++) {
+        if (playerSequence[i] !== sequence[i]) {
             return false;
         }
     }
@@ -75,37 +79,32 @@ function nextLevel() {
     score++;
     scoreDisplay.textContent = score;
     level++;
-    generateSequence();
     playerSequence = [];
-    showSequence();
+    setTimeout(() => {
+        generateSequence();
+        showSequence();
+    }, 1000); // Donne un peu de temps avant de commencer le prochain niveau
 }
 
 // Crée le plateau de jeu
 function createGameBoard() {
-let gridSize;
-if (level >= 2 && (level - 2) % 2 === 0) { // Vérifie si le niveau est un multiple de 2 à partir de 2
-    gridSize = level + 3; // Si oui, ajoute 3 à la taille du plateau
-} else {
-    gridSize = level + 2; // Sinon, ajoute seulement 2 à la taille du plateau
-}
+    let gridSize = 3; // Fixe la grille à 3x3
 
-for (let i = 0; i < gridSize * gridSize; i++) {
-    let tile = document.createElement('div');
-    tile.classList.add('tile');
-    tile.addEventListener('click', () => tileClick(i));
-    gameBoard.appendChild(tile);
-}
-gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, 80px)`;
-gameBoard.style.gridTemplateRows = `repeat(${gridSize}, 80px)`;
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        let tile = document.createElement('div');
+        tile.classList.add('tile');
+        tile.addEventListener('click', () => tileClick(i));
+        gameBoard.appendChild(tile);
+    }
+    gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, 80px)`;
+    gameBoard.style.gridTemplateRows = `repeat(${gridSize}, 80px)`;
 }
 
 // Démarre le jeu
 function startGame() {
-    // Supprimer le plateau de jeu existant s'il y en a un
     while (gameBoard.firstChild) {
         gameBoard.removeChild(gameBoard.firstChild);
     }
-    // Créer un nouveau plateau de jeu
     createGameBoard();
     generateSequence();
     showSequence();
