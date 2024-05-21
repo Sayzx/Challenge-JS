@@ -7,28 +7,40 @@
 </head>
 <body>
 
+<audio id="gameMusic" loop>
+    <source src="../assets/mp3/music.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'élément audio.
+</audio>
+
+<div id="startScreen" class="startScreen">
+    <div class="startScreen-content">
+        <h2>Bienvenue sur SnakIo !</h2>
+        <button id="startButton">Commencer</button>
+    </div>
+</div>
+
 <div class="navbar">
     <div class="logo">
         <a href="index.html" id="logo-link">
-            <img src="../assets/img/logo.png" alt="Website Logo">
+            <img src="../assets/img/games/logo.png" alt="Website Logo">
         </a>
     </div>
     <div class="right-nav">
-        <h1>CPS Test</h1>
+        <h1>SnakeIo</h1>
     </div>
 </div>
 
 <canvas id="gameCanvas"></canvas>
-<script src="../games/snakeIo.js"></script>
 
-<div id="resultModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
+<div id="endScreen" class="endScreen">
+    <div class="endScreen-content">
         <h2>Perdu !</h2>
         <p>Votre serpent mesurait <span id="snakeSize">0</span> cellules de long.</p>
         <button id="retryButton">Réessayer</button>
     </div>
 </div>
+
+<script src="../games/snakeIo.js"></script>
 
 </body>
 </html>

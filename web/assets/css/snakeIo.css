@@ -44,7 +44,53 @@ canvas {
     border: 1px solid #000;
 }
 
-.modal {
+.startScreen {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.startScreen-content {
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 110%;
+    color: white;
+    border: none;
+    background: -webkit-linear-gradient(183deg, rgba(39, 48, 54, 1) 43%, rgba(80, 87, 93, 1) 100%);
+    border-radius: 3%;
+    display: flex;
+    margin: 15% auto;
+    padding: 20px;
+    width: 35%;
+    height: 35%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#startButton{
+    border: none;
+    font-family: 'Satoshi-Bold', sans-serif;
+    font-size: 100%;
+    border-radius: 4%;
+    background-color: #495b62;
+    color: #ffffff;
+    width: 25%;
+    height: 13%;
+}
+
+#startButton:hover,
+#startButton:focus{
+    background-color: #2e3d43;
+    cursor: pointer;
+}
+
+.endScreen {
     display: none;
     position: fixed;
     z-index: 1;
@@ -56,7 +102,7 @@ canvas {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+.endScreen-content {
     font-family: 'Satoshi-Bold', sans-serif;
     font-size: 110%;
     color: white;
@@ -87,20 +133,5 @@ canvas {
 #retryButton:hover,
 #retryButton:focus{
     background-color: #2e3d43;
-    cursor: pointer;
-}
-
-.close {
-    align-self: self-end;
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
 }
