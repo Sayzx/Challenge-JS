@@ -43,10 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    closeModal.onclick = function() {
-        resultModal.style.display = "none";
-    };
-
     retryButton.onclick = function() {
         resultModal.style.display = "none";
         counter = 0;

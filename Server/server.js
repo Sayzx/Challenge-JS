@@ -56,5 +56,5 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {});
 
 import('open').then(openModule => {
-    openModule.default(`http://${hostname}:${port}`).then();
+    openModule.default(`http://localhost:8080`).then();
 })
