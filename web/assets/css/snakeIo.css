@@ -1,43 +1,7 @@
-@font-face {
-    font-family: 'Satoshi-Bold';
-    src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
-    url('../fonts/Satoshi-Bold.woff') format('woff'),
-    url('../fonts/Satoshi-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-}
-
 body {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: rgb(39, 48, 54);
-    background: -moz-linear-gradient(183deg, rgba(39, 48, 54, 1) 43%, rgba(80, 87, 93, 1) 100%);
-    background: -webkit-linear-gradient(183deg, rgba(39, 48, 54, 1) 43%, rgba(80, 87, 93, 1) 100%);
-    overflow: hidden;
-    height: 100vh;
     flex-direction: column;
-}
-
-.navbar {
-    margin-bottom: 1%;
-    margin-top: -8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-family: 'Satoshi-Bold', sans-serif;
-    width: 100%;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    max-width: 130px;
 }
 
 canvas {
