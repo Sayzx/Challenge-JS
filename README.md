@@ -19,17 +19,22 @@ Challenge JS was a month and a half project challenging us to exploit several fe
 
 ## Features
 
-- **Snake Games**: 
-- **Memory Test**:
-- **Keyboard Typing**
-- **Tic-Tac-Toe**: 
-- **A Algorithmith Bubble Sort on graphic**: 
+- **Snake Games**:  A classic arcade game in which the player controls a snake, which grows with each piece of mentors it eats. The objective is to avoid collisions with walls or the snake's own tail while trying to eat as many mentors as possible.
+
+- **Memory Test**:  A game designed to improve and test the player's memory skills. The player is shown a sequence of items they must remember and repeat in the correct order. The difficulty increases as the player progresses.
+
+- **Keyboard Typing**: A typing game that helps improve typing speed and accuracy. The player must type out words or sentences as quickly and accurately as possible. The game can track words per minute (WPM) and accuracy rate.
+
+- **Tic-Tac-Toe**:  
+A two-player game (One AI & One Player) where players take turns marking spaces in a 3x3 grid with X or O. The objective is to be the first to get three of their marks in a row, either horizontally, vertically or diagonally.
+
+- **A Algorithmith Bubble Sort on graphic**:  An educational tool that visually demonstrates the bubble sort algorithm. It allows users to see how the algorithm works step-by-step as it sorts a list of numbers. This feature can help users understand the sorting process and algorithm efficiency.
 
 
 
 ## Additional Features
 
-- **CPS Click Tester**: 
+- **CPS Click Tester**: A tool designed to measure how many times a user can click within a specific time frame.
 
 ## Getting Started
 
@@ -65,7 +70,7 @@ To get the Challenge JS project up and running, make sure you have a JS environm
 
 
 
-![App](https://media.discordapp.net/attachments/1012749489402023956/1221833480799785060/image.png?ex=6614041a&is=66018f1a&hm=ccbaec249252d1e8c35092b38294b5a1a11881895aa69268bf5be4206ed860d3&=&format=webp&quality=lossless&width=1305&height=662)
+![App](https://media.discordapp.net/attachments/1235943740385001532/1248999126406795324/image.png?ex=6665b495&is=66646315&hm=4fe881e248f9dafbe9e4e646ab88a1f0d608b9718cb2253b8c619f3035831000&=&format=webp&quality=lossless&width=1336&height=671)
 
 
 
