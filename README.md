@@ -1,7 +1,7 @@
 
 
 ![App](https://media.discordapp.net/attachments/1235943740385001532/1248997608903675924/LANGUES.png?ex=6665b32b&is=666461ab&hm=c89588e45a2a9b17db1e3ab2eb8d83ee639af5155fbdf6107698f85c6d9b4f5c&=&format=webp&quality=lossless&width=1440&height=466)
-# Challange JS Project Overview
+# Challenge JS Project Overview
 
 Challenge JS was a month and a half project challenging us to exploit several features of the Javascript language and to learn how to solve various problems on languages ​​used on the web. We explored the libs through additional features and learned how to create games in JS
 
@@ -9,7 +9,7 @@ Challenge JS was a month and a half project challenging us to exploit several fe
 
 ### Front-End
 
-- **HTML**: For page structure
+- **HTML** : For page structure
 - **CSS**: For page styling
 - **JS**: For dynamic pages and effects
 
@@ -28,7 +28,7 @@ Challenge JS was a month and a half project challenging us to exploit several fe
 - **Tic-Tac-Toe**:  
 A two-player game (One AI & One Player) where players take turns marking spaces in a 3x3 grid with X or O. The objective is to be the first to get three of their marks in a row, either horizontally, vertically or diagonally.
 
-- **A Algorithmith Bubble Sort on graphic**:  An educational tool that visually demonstrates the bubble sort algorithm. It allows users to see how the algorithm works step-by-step as it sorts a list of numbers. This feature can help users understand the sorting process and algorithm efficiency.
+- **A Bubble Sort Algorithm on graphic**:  An educational tool that visually demonstrates the bubble sort algorithm. It allows users to see how the algorithm works step-by-step as it sorts a list of numbers. This feature can help users understand the sorting process and algorithm efficiency.
 
 
 
@@ -43,7 +43,7 @@ To get the Challenge JS project up and running, make sure you have a JS environm
 
 ### Prerequisites
 
-- NodeJS installed on your machine.
+- Node.js installed on your machine.
 - Access to a terminal or command prompt.
 
 ### Installation and Execution

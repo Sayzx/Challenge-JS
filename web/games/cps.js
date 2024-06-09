@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isStarted = true;
             scoreCount.textContent = ' ' + counter;
             clicksCount.textContent = ' 0.00';
-            startTime = 15; // Durée du jeu en secondes
+            startTime = 15;
             timerCount.textContent = ' ' + startTime.toFixed(2);
 
             intervalId = setInterval(function() {

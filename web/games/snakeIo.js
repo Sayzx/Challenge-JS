@@ -1,4 +1,3 @@
-//Ce qui est lié à la grille
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const gridWidth = 600;
@@ -10,14 +9,12 @@ const segmentHeight = 20;
 let dx = gridSize;
 let dy = 0;
 
-//Ce qui est lié au serpent
 let snake = [];
 let lastMoveTime = 0;
 const moveCooldown = 75;
 let lastRenderTime = 0;
 const SNAKE_SPEED = 10;
 
-//Ce qui est lié à la pomme
 let apple = { x: 0, y: 0 };
 let appleImages = [];
 for (let i = 1; i <= 6; i++) {
@@ -27,15 +24,12 @@ for (let i = 1; i <= 6; i++) {
 }
 let currentAppleImg;
 
-//Autre
 let isGameOver = false;
 const endScreen = document.getElementById('endScreen');
 const retryButton = document.getElementById('retryButton');
 const snakeSize = document.getElementById('snakeSize')
 const gameMusic = document.getElementById('gameMusic');
 const startScreen = document.getElementById('startScreen')
-
-////////////////////////////////////////// FONCTION DU JEU ////////////////////////////////////////////////////////////
 
 function gameLoop(currentTime) {
     if (!lastRenderTime) lastRenderTime = currentTime;
@@ -85,8 +79,6 @@ function drawGrid() {
         }
     }
 }
-
-////////////////////////////////////////// FONCTION DU SNAKE ////////////////////////////////////////////////////////////
 
 function drawSnake() {
     snake.forEach(drawSnakePart);
@@ -162,8 +154,6 @@ function checkCollision(head) {
     return false;
 }
 
-////////////////////////////////////////// FONCTION DE LA POMME ////////////////////////////////////////////////////////////
-
 function placeApple() {
     let newPosition;
     do {
@@ -197,8 +187,6 @@ function drawApple() {
         ctx.drawImage(currentAppleImg, apple.x, apple.y, gridSize * 2, gridSize * 2);
     }
 }
-
-////////////////////////////////////////// RESTE ////////////////////////////////////////////////////////////
 
 drawGrid();
 

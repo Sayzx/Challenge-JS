@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>HighScore | CPS</title>
@@ -9,39 +10,39 @@
     <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <script src="../games/cps.js"></script>
 </head>
+
 <body>
-
-<div class="navbar">
-    <div class="logo">
-        <a href="index.html" id="logo-link">
-            <img src="../assets/img/games/logo.png" alt="Website Logo">
-        </a>
-    </div>
-    <div class="right-nav">
-        <h1>CPS Test</h1>
-    </div>
-</div>
-
-<div class="click-box">
-    <div class="click-area">
-        <button id="start">Cliquez</button>
-        <div class="click-box-btn">
-            <div id="timer">Durée :<span id="timerCount"> 0</span></div>
-            <div id="clicks"> Clics/s :<span id="clicksCount"> 0</span></div>
-            <div id="score">Score :<span id="scoreCount"> 0</span></div>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html" id="logo-link">
+                <img src="../assets/img/games/logo.png" alt="Website Logo">
+            </a>
+        </div>
+        <div class="right-nav">
+            <h1>CPS Test</h1>
         </div>
     </div>
-</div>
 
-<div id="resultModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <h2>Découvrez votre score !</h2>
-        <p>Votre score de clique est de <span id="finalCps">0.00</span> CPS.</p>
-        <p><span id="totalClicks">0</span> cliques en 15 secondes.</p>
-        <button id="retryButton">Réessayer</button>
+    <div class="click-box">
+        <div class="click-area">
+            <button id="start">Cliquez</button>
+            <div class="click-box-btn">
+                <div id="timer">Durée :<span id="timerCount"> 0</span></div>
+                <div id="clicks"> Clics/s :<span id="clicksCount"> 0</span></div>
+                <div id="score">Score :<span id="scoreCount"> 0</span></div>
+            </div>
+        </div>
     </div>
-</div>
 
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Découvrez votre score !</h2>
+            <p>Votre score de clique est de <span id="finalCps">0.00</span> CPS.</p>
+            <p><span id="totalClicks">0</span> cliques en 15 secondes.</p>
+            <button id="retryButton">Réessayer</button>
+        </div>
+    </div>
 </body>
+
 </html>

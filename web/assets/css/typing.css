@@ -10,11 +10,6 @@
     transition: 0.8s;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 #sentence-box {
     border: 3px solid #ccc;
     border-radius: 10px;
@@ -30,7 +25,7 @@
 #user-input {
     padding: 12px;
     font-size: 18px;
-    border: 0.9px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     width: 94%;

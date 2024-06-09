@@ -15,18 +15,6 @@ body{
     width: 50%;
 }
 
-.click-box-array{
-    display: flex;
-    background-color: #403730;
-    margin-top: 3%;
-    border-radius: 5%;
-    height: 90%;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #65443d;
-}
-
 .click-area{
     height: 95%;
     width: 95%;
@@ -45,23 +33,6 @@ body{
 }
 
 #start:hover{
-    background-color: #3e4e59;
-    cursor: pointer;
-}
-
-#game{
-    margin-top: 2%;
-    border: none;
-    font-family: 'Satoshi-Bold', sans-serif;
-    font-size: 150%;
-    border-radius: 4%;
-    background-color: #495b62;
-    color: #ffffff;
-    width: 100%;
-    height: 95%;
-}
-
-#game:hover{
     background-color: #3e4e59;
     cursor: pointer;
 }
@@ -126,7 +97,7 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0.4);
 }
 

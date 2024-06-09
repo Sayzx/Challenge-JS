@@ -103,7 +103,6 @@
             currentPlayer = '❌';
         }
     }
-    
 
     document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('game-board').style.display = 'none';

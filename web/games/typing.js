@@ -12,13 +12,10 @@ function startTest() {
     showNextWord();
     timerInterval = setInterval(updateTimer, 1000);
 
-    // Ajouter un écouteur pour keydown sur l'élément d'entrée de l'utilisateur
     document.getElementById("user-input").addEventListener("keydown", function(event) {
         if (event.key === " " && this.value === " ") {
-            // Empêcher l'espace supplémentaire
             event.preventDefault();
-            // Simuler une entrée erronée et passer au mot suivant
-            this.value = ""; // Réinitialiser la valeur pour éviter de compter comme double espace
+            this.value = "";
             errors++;
             document.getElementById("error-count").textContent = "Erreurs: " + errors;
             currentWordIndex++;
@@ -78,9 +75,7 @@ function finishTest() {
     let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
     let wordsPerMinute = Math.floor(currentWordIndex / (elapsedTime / 60));
     let errorsPerWord = Math.round(errors / currentWordIndex * 100) / 100;
-    let result = "Vous avez tapé " + currentWordIndex + " mots en " + elapsedTime + " secondes avec " + errorsPerWord + " Erreur(s) par mots";
-
-    document.getElementById("sentence-box").textContent = result;
+    document.getElementById("sentence-box").textContent = "Vous avez tapé " + wordsPerMinute + " mots en 60 secondes avec " + errorsPerWord + " erreur(s) par mots.";
     document.getElementById("user-input").value = "";
 }
 
@@ -88,23 +83,22 @@ function userInputHandler() {
     let userInput = this.value.trim();
     let currentWord = words[currentWordIndex];
 
-    // Vérifier si l'utilisateur a appuyé deux fois sur espace
-    if (userInput === "" && this.value.endsWith("  ")) { // Deux espaces à la fin
-        markWordAsSkipped(currentWordIndex); // Marquer le mot en rouge dans le sentence-box
-        errors++; // Augmenter le compteur d'erreurs
+    if (userInput === "" && this.value.endsWith("  ")) {
+        markWordAsSkipped(currentWordIndex);
+        errors++;
         document.getElementById("error-count").textContent = "Erreurs: " + errors;
-        currentWordIndex++; // Passer au mot suivant
-        showNextWord(); // Afficher le mot suivant
-        this.value = ""; // Réinitialiser l'input
+        currentWordIndex++;
+        showNextWord();
+        this.value = "";
     } else if (userInput === currentWord) {
-        this.style.color = "green"; // Colorer en vert si le mot est correct
-        currentWordIndex++; // Passer au mot suivant
-        showNextWord(); // Afficher le mot suivant
+        this.style.color = "green";
+        currentWordIndex++;
+        showNextWord();
     } else if (currentWord.startsWith(userInput)) {
-        this.style.color = "black"; // Garder en noir si c'est partiellement correct
+        this.style.color = "black";
     } else {
-        this.style.color = "red"; // Colorer en rouge si incorrect
-        errors++; // Augmenter le compteur d'erreurs
+        this.style.color = "red";
+        errors++;
         document.getElementById("error-count").textContent = "Erreurs: " + errors;
     }
 }
@@ -113,9 +107,6 @@ function markWordAsSkipped(index) {
     let sentenceBox = document.getElementById("sentence-box");
     let wordsSpan = sentenceBox.getElementsByTagName("span");
     if (wordsSpan[index]) {
-        wordsSpan[index].style.color = "red"; // Colorer le mot à l'index en rouge
+        wordsSpan[index].style.color = "red";
     }
 }
-
-
-

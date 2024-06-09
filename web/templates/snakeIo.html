@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>HighScore | CPS</title>
@@ -7,42 +9,42 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/snakeIo.css">
     <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+    <audio id="gameMusic" loop>
+        <source src="../assets/mp3/music.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
 
-<audio id="gameMusic" loop>
-    <source src="../assets/mp3/music.mp3" type="audio/mpeg">
-    Votre navigateur ne supporte pas l'élément audio.
-</audio>
-
-<div id="startScreen" class="startScreen">
-    <div class="startScreen-content">
-        <h2>Bienvenue sur SnakIo !</h2>
-        <button id="startButton">Commencer</button>
+    <div id="startScreen" class="startScreen">
+        <div class="startScreen-content">
+            <h2>Bienvenue sur SnakeIo !</h2>
+            <button id="startButton">Commencer</button>
+        </div>
     </div>
-</div>
 
-<div class="navbar">
-    <div class="logo">
-        <a href="index.html" id="logo-link">
-            <img src="../assets/img/games/logo.png" alt="Website Logo">
-        </a>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html" id="logo-link">
+                <img src="../assets/img/games/logo.png" alt="Website Logo">
+            </a>
+        </div>
+        <div class="right-nav">
+            <h1>SnakeIo</h1>
+        </div>
     </div>
-    <div class="right-nav">
-        <h1>SnakeIo</h1>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="endScreen" class="endScreen">
+        <div class="endScreen-content">
+            <h2>Perdu !</h2>
+            <p>Votre serpent mesurait <span id="snakeSize">0</span> cellules de long.</p>
+            <button id="retryButton">Réessayer</button>
+        </div>
     </div>
-</div>
 
-<canvas id="gameCanvas"></canvas>
-
-<div id="endScreen" class="endScreen">
-    <div class="endScreen-content">
-        <h2>Perdu !</h2>
-        <p>Votre serpent mesurait <span id="snakeSize">0</span> cellules de long.</p>
-        <button id="retryButton">Réessayer</button>
-    </div>
-</div>
-
-<script src="../games/snakeIo.js"></script>
-
+    <script src="../games/snakeIo.js"></script>
 </body>
+
 </html>

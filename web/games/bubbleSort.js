@@ -55,32 +55,3 @@ async function startBubbleSort() {
 }
 
 window.onload = createNumberSequence;
-
-function updateDisplay(numbers) {
-    const bubbleSortBox = document.getElementById('bubble-sort-box');
-    bubbleSortBox.innerHTML = '';
-    if (displayMode === 1) { // Numbered list
-        const ol = document.createElement('ol');
-        numbers.forEach(number => {
-            const li = document.createElement('li');
-            li.textContent = number;
-            ol.appendChild(li);
-        });
-        bubbleSortBox.appendChild(ol);
-    } else if (displayMode === 2) { // Bar graph
-        numbers.forEach(number => {
-            const div = document.createElement('div');
-            div.className = 'bar';
-            div.style.height = `${number * 3}px`; // Multiplier pour ajuster la hauteur en fonction de la valeur
-            div.textContent = number;
-            bubbleSortBox.appendChild(div);
-        });
-    } else { // Default: Boxes
-        numbers.forEach(number => {
-            const box = document.createElement('div');
-            box.className = 'number-box';
-            box.textContent = number;
-            bubbleSortBox.appendChild(box);
-        });
-    }
-}

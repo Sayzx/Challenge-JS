@@ -32,7 +32,7 @@
 #user-input {
     padding: 12px;
     font-size: 18px;
-    border: 0.9px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     width: 94%;
@@ -88,18 +88,3 @@ button:hover {
     font-family: 'Satoshi-Bold', sans-serif;
     transition: background-color 0.5s;
 }
-    
-
-.bar {
-    width: 20px;
-    margin: 2px;
-    background-color: #FF6347;
-    color: white;
-    text-align: center;
-    vertical-align: bottom;
-    display: inline-block;
-    height: 0;
-    transition: height 0.5s;
-}
-
-

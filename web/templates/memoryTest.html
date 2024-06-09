@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Memory Game</title>
-    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>Memory Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/memoryTest.css">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
@@ -15,15 +18,26 @@
             </a>
         </div>
         <div class="right-nav">
-            <h1>memoryTest</h1>
+            <h1>Memory Test</h1>
         </div>
     </div>
     <div id="game-container">
         <div class="game-board"></div>
-        <button class="btn-12" id="start-button"><span>Commencer</span></button>
+        <button class="start" id="start-button"><span>COMMENCER</span></button>
 
-        <div class="scoreed">Score: <span id="score">0</span></div>
+        <div class="scored">Score: <span id="score">0</span></div>
     </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Perdu !</h2>
+            <p>Votre score était de : <span id="modalScore">0</span></p>
+            <button id="retryButton">Réessayer</button>
+        </div>
+    </div>
+
     <script src="../games/memoryTest.js"></script>
 </body>
+
 </html>

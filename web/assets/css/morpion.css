@@ -23,16 +23,16 @@ button {
     border-radius: 10px;
     border: 0;
     background-color: rgb(255, 56, 86);
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-size: 15px;
     transition: all 0.3s ease;
-    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    box-shadow: rgb(201, 46, 70) 0 10px 0 0;
     color: hsl(0, 0%, 100%);
     cursor: pointer;
   }
-  
+
   button:hover {
-    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+    box-shadow: rgb(201, 46, 70) 0 7px 0 0;
   }
 
 
@@ -60,7 +60,7 @@ strong {
 	bottom: 15px;
 	left: 15px;
 	transform: translateY(200%);
-	animation: noti 2s infinite forwards alternate ease-in;
+	animation: notification 2s infinite forwards alternate ease-in;
 	&-header {
 		display: flex;
 		align-items: center;
@@ -140,7 +140,7 @@ strong {
 	}
 }
 
-@keyframes noti{
+@keyframes notification{
 	50%{
 		transform: translateY(0);
 	}
