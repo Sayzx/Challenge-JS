@@ -1,3 +1,4 @@
+// This function creates a sequence of 9 numbers between 1 and 9 and displays them in a box.
 function createNumberSequence() {
     const bubbleSortBox = document.getElementById('bubble-sort-box');
     bubbleSortBox.innerHTML = '';
@@ -13,6 +14,7 @@ function createNumberSequence() {
     });
 }
 
+// This a Asynchronous function that sorts the numbers in the box using the bubble sort algorithm.
 async function bubbleSort() {
     let numberBoxes = document.querySelectorAll('.number-box');
     let sorted = false;

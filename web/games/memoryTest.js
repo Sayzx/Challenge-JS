@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.style.display = 'block';
     }
 
+    // Create a game board start with a 3x3 grid
     function createGameBoard() {
         gameBoard.innerHTML = '';
         gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, 80px)`;
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Genearte a sequence of random numbers
     function generateSequence() {
         for (let i = 0; i < level + 1; i++) {
             sequence.push(Math.floor(Math.random() * (gridSize * gridSize)));
@@ -66,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Check if the player clicked the right tile
     async function tileClick(tileIndex) {
         let isOver = false;
         await highlightTile(tileIndex, false);
@@ -84,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Move to the next level and add Score and Level
     function nextLevel() {
         score++;
         level++;

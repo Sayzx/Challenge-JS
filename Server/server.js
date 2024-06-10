@@ -55,6 +55,8 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {});
 
+
+// Using library open to open the browser directly
 import('open').then(openModule => {
     openModule.default(`http://localhost:8080`).then();
 })

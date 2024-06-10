@@ -36,6 +36,7 @@ function resetGame() {
     errors = 0;
 }
 
+// This function displays the next word in the sentence box.
 function showNextWord() {
     if (currentWordIndex < words.length) {
         let sentenceBox = document.getElementById("sentence-box");
@@ -60,6 +61,7 @@ function showNextWord() {
     }
 }
 
+// This function updates timer 
 function updateTimer() {
     let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
     let remainingTime = 60 - elapsedTime;
@@ -79,6 +81,7 @@ function finishTest() {
     document.getElementById("user-input").value = "";
 }
 
+// Get a player input and check if it is correct
 function userInputHandler() {
     let userInput = this.value.trim();
     let currentWord = words[currentWordIndex];

@@ -31,6 +31,8 @@ const snakeSize = document.getElementById('snakeSize')
 const gameMusic = document.getElementById('gameMusic');
 const startScreen = document.getElementById('startScreen')
 
+
+
 function gameLoop(currentTime) {
     if (!lastRenderTime) lastRenderTime = currentTime;
     const progress = currentTime - lastRenderTime;
@@ -56,6 +58,7 @@ function gameLoop(currentTime) {
     }
 }
 
+// Init game and start snake position and appel ( Mentor head ) position
 function initGame() {
     snake = [
         {x: 160, y: 200},
@@ -89,6 +92,7 @@ function drawSnakePart(snakePart) {
     ctx.fillRect(snakePart.x, snakePart.y + (gridSize - segmentHeight) / 2, gridSize, segmentHeight);
 }
 
+// If Player press arrow key, change direction of the snake
 function changeDirection(event) {
     const currentTime = Date.now();
     if (currentTime - lastMoveTime < moveCooldown) return;
@@ -142,6 +146,7 @@ function moveSnake() {
     }
 }
 
+// If snake hit the wall or itself, game over
 function checkCollision(head) {
     if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
         return true;
@@ -154,6 +159,7 @@ function checkCollision(head) {
     return false;
 }
 
+// Place random Mentor head on the grid
 function placeApple() {
     let newPosition;
     do {
