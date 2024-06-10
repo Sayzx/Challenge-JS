@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Genearte a sequence of random numbers
+    // Generate a sequence of random numbers
     function generateSequence() {
         for (let i = 0; i < level + 1; i++) {
             sequence.push(Math.floor(Math.random() * (gridSize * gridSize)));

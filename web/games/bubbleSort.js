@@ -14,7 +14,7 @@ function createNumberSequence() {
     });
 }
 
-// This a Asynchronous function that sorts the numbers in the box using the bubble sort algorithm.
+// This is an asynchronous function that sorts the numbers in the box using the bubble sort algorithm.
 async function bubbleSort() {
     let numberBoxes = document.querySelectorAll('.number-box');
     let sorted = false;
