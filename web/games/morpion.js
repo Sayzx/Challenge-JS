@@ -21,6 +21,7 @@
         }
     }
 
+    // This function creates the game board and displays it on the screen.
     async function renderBoard() {
         return new Promise(resolve => {
             const gameBoard = document.getElementById('game-board');
@@ -33,6 +34,7 @@
         });
     }
 
+    // makeMove function is called when a player clicks on a cell to make a move.
     async function makeMove(index) {
         if (isMoveInProgress) return;
         if (currentMode === 'pve' && currentPlayer === '⭕️') return;
@@ -56,6 +58,9 @@
         isMoveInProgress = false;
     }
 
+
+
+    // if gamemode is pve then aiMove function is called to make a move.
     async function aiMove() {
         if (isMoveInProgress) return;
         isMoveInProgress = true;
@@ -105,6 +110,7 @@
     }
 
 
+    // checkWin is a table of winning combinations. It checks if any of the winning combinations are present on the board.
     function checkWin(board) {
         const winConditions = [
             [0, 1, 2],
@@ -128,6 +134,8 @@
         return board.every(cell => cell !== '');
     }
 
+
+    // Notificatoins custom for not used a alert basic
     function showNotification(message) {
         const notification = document.querySelector('.notification');
         const notificationText = document.querySelector('.notification-text');
