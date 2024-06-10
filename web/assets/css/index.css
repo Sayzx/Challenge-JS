@@ -85,6 +85,10 @@
     background: linear-gradient(45deg, #22c1c3 0%, #904ED4 100%);
 }
 
+.carousel-item:nth-child(6) {
+    background: linear-gradient(45deg, #fdbb2d 0%, #22c1c3 100%);
+}
+
 .carousel-item[data-pos="2"] {
     z-index: 5;
 }
