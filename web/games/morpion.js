@@ -1,54 +1,109 @@
+    let isMoveInProgress = false;
     let currentPlayer = '⭕️';
     let board = ['', '', '', '', '', '', '', '', ''];
-    let currentLevel = 'easy';
+    let currentMode = '';
+    let notificationTimeout;
 
-    function startGame(level) {
-        currentLevel = level;
+    async function startGame(mode) {
         board = ['', '', '', '', '', '', '', '', ''];
+        currentMode = mode;
+
         document.getElementById('level-selection').style.display = 'none';
+        isMoveInProgress = true;
+        await renderBoard();
+        isMoveInProgress = false;
         currentPlayer = '⭕️';
-        renderBoard();
-        if (currentLevel !== 'easy') {
+
+        if (currentMode === "pve") {
             setTimeout(aiMove, 600);
         } else {
             currentPlayer = '❌';
         }
     }
 
-    function renderBoard() {
-        const gameBoard = document.getElementById('game-board');
-        gameBoard.innerHTML = '';
-        gameBoard.style.display = 'grid';
-        board.forEach((cell, index) => {
-            gameBoard.innerHTML += `<div class="cell" onclick="makeMove(${index})">${cell}</div>`;
+    async function renderBoard() {
+        return new Promise(resolve => {
+            const gameBoard = document.getElementById('game-board');
+            gameBoard.innerHTML = '';
+            gameBoard.style.display = 'grid';
+            board.forEach((cell, index) => {
+                gameBoard.innerHTML += `<div class="cell" onclick="makeMove(${index})">${cell}</div>`;
+            });
+            setTimeout(resolve, 700);
         });
     }
 
-    function makeMove(index) {
-        if (currentPlayer !== '❌' || board[index] !== '' || checkWin(board) || checkDraw()) return;
-        board[index] = '❌';
-        renderBoard();
+    async function makeMove(index) {
+        if (isMoveInProgress) return;
+        if (currentMode === 'pve' && currentPlayer === '⭕️') return;
+        if (board[index] !== '' || checkWin(board) || checkDraw()) return;
+
+        isMoveInProgress = true;
+
+        board[index] = currentPlayer;
+
+        await renderBoard();
+
         if (checkWin(board) || checkDraw()) {
             endGame();
         } else {
-            currentPlayer = '⭕️';
-            setTimeout(aiMove, 600);
-        }
-    }
-
-    function aiMove() {
-        let availablePositions = board.map((val, idx) => val === '' ? idx : null).filter(val => val !== null);
-        if (availablePositions.length > 0) {
-            let aiMove = availablePositions[Math.floor(Math.random() * availablePositions.length)];
-            board[aiMove] = '⭕️';
-            renderBoard();
-            if (checkWin(board) || checkDraw()) {
-                endGame();
-                return;
+            currentPlayer = (currentPlayer === '❌') ? '⭕️' : '❌';
+            if (currentMode === 'pve' && currentPlayer === '⭕️') {
+                setTimeout(aiMove, 600);
             }
         }
-        currentPlayer = '❌';
+
+        isMoveInProgress = false;
     }
+
+    async function aiMove() {
+        if (isMoveInProgress) return;
+        isMoveInProgress = true;
+        let availablePositions = board.map((val, idx) => val === '' ? idx : null).filter(val => val !== null);
+        let bestMove = null;
+        let winImminent = false;
+        let blockOpponent = null;
+
+        for (let pos of availablePositions) {
+            board[pos] = '⭕️';
+            if (checkWin(board)) {
+                bestMove = pos;
+                winImminent = true;
+                board[pos] = '';
+                break;
+            }
+            board[pos] = '';
+        }
+
+        if (!winImminent) {
+            for (let pos of availablePositions) {
+                board[pos] = '❌';
+                if (checkWin(board)) {
+                    blockOpponent = pos;
+                    board[pos] = '';
+                    break;
+                }
+                board[pos] = '';
+            }
+        }
+
+        if (blockOpponent !== null) {
+            bestMove = blockOpponent;
+        } else if (!winImminent) {
+            bestMove = availablePositions[Math.floor(Math.random() * availablePositions.length)];
+        }
+
+        board[bestMove] = '⭕️';
+        await renderBoard();
+        if (checkWin(board) || checkDraw()) {
+            endGame();
+            return;
+        }
+
+        currentPlayer = '❌';
+        isMoveInProgress = false;
+    }
+
 
     function checkWin(board) {
         const winConditions = [
@@ -73,22 +128,19 @@
         return board.every(cell => cell !== '');
     }
 
-    let notificationTimeout;
     function showNotification(message) {
-
         const notification = document.querySelector('.notification');
         const notificationText = document.querySelector('.notification-text');
         notificationText.innerHTML = message;
         notification.style.display = 'block';
-        
+
         clearTimeout(notificationTimeout);
-        
+
         notificationTimeout = setTimeout(() => {
             notification.style.display = 'none';
         }, 3500);
     }
 
-    
     function endGame() {
         if (checkWin(board)) {
             showNotification(`Le joueur ${currentPlayer} a gagné !`);
@@ -97,13 +149,4 @@
         }
         document.getElementById('level-selection').style.display = 'flex';
         document.getElementById('game-board').style.display = 'none';
-        if (currentLevel !== 'easy') {
-            currentPlayer = '⭕️';
-        } else {
-            currentPlayer = '❌';
-        }
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('game-board').style.display = 'none';
-    });
